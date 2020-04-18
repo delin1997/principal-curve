@@ -1,7 +1,6 @@
 source("pgh.R")
 source("principal_curve_KDE.R")
 library(rgl)
-library(tcltk)
 
 t = seq(0,10*pi,pi/50)
 x = 5*sin(t)

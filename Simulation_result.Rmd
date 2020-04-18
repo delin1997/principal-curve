@@ -14,8 +14,6 @@ knit_hooks$set(webgl = hook_webgl)
 ```{r}
 source("pgh.R")
 source("principal_curve_KDE.R")
-library(rgl)
-library(tcltk)
 ```
 
 ```{r testgl, webgl=TRUE}
