@@ -25,6 +25,9 @@ label[label!=0] = 1
 
 data <- which(label!=0, arr.ind = TRUE)
 ```
+```{r test1, webgl=TRUE, fig.width = 14, fig.height = 9}
+plot3d(data,col=rgb(0,0,1,0.2))
+```
 
 ## principal curve projection
 ```{r eval=FALSE}
@@ -37,9 +40,6 @@ library(data.table)
 pc_projection <- fread("pc.csv")
 ```
 
-```{r test1, webgl=TRUE, fig.width = 14, fig.height = 9}
-plot3d(data,col=rgb(0,0,1,0.2))
-```
 ```{r test2, webgl=TRUE, fig.width = 14, fig.height = 9}
 plot3d(pc_projection,col=rgb(0,0,1,0.2))
 ```
