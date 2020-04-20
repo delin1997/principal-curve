@@ -1,0 +1,47 @@
+---
+title: "Real Data Analysis"
+author: "Zhao delin"
+date: "2020/4/20"
+output: html_document
+---
+
+```{r setup, warning=FALSE}
+library(knitr)
+library(rgl)
+library(R.matlab)
+knit_hooks$set(webgl = hook_webgl)
+```
+
+```{r}
+source("pgh.R")
+source("principal_curve_KDE.R")
+```
+
+## original data
+```{r, warning=FALSE}
+volume <- readMat('sample.mat')$vol
+label  <- readMat('true_label.mat')$md
+label[label!=0] = 1
+
+data <- which(label!=0, arr.ind = TRUE)
+```
+
+## principal curve projection
+```{r eval=FALSE}
+kernel_sigma <- 1.5
+pc_projection <- principal_curve_KDE(data, data, kernel_sigma,1)
+```
+
+```{r include=FALSE}
+library(data.table)
+pc_projection <- fread("pc.csv")
+```
+
+```{r test1, webgl=TRUE, fig.width = 14, fig.height = 9}
+plot3d(data,col=rgb(0,0,1,0.2))
+```
+```{r test2, webgl=TRUE, fig.width = 14, fig.height = 9}
+plot3d(pc_projection,col=rgb(0,0,1,0.2))
+```
+
+
