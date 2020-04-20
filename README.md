@@ -5,4 +5,4 @@ A simulation experiment to find principal curves(using KDE) for a space helix(Se
 
 Also present a real data analysis for a 3D RNA image(Dataset: https://github.com/freedom00y/data2020):
 
-[Real data analysis](https://delin1997.github.io/principal-curve/Real_data_analysis.html) 
+[Real data analysis](https://delin1997.github.io/principal-curve/real_data_analysis.html) 
